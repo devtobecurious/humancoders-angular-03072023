@@ -1,0 +1,22 @@
+{
+  "name": "decouverte-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "pretsc": "echo 'ah que johny'",
+    "tsc": "tsc",
+    "init": "tsc --init",
+    "posttsc": "echo 'oh yeahh'",
+
+    "prebuild": "echo 'build'",
+    "build": "npm run tsc",
+    "postbuild": "echo 'build fin'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.1.6"
+  }
+}
