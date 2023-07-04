@@ -1,4 +1,10 @@
-<table>
+<button (click)="addSelfie()">Ajouter un selfie</button>
+
+<hr>
+<span (click)="addSelfie()">Ajouter un selfie</span>
+<hr>
+
+<table *ngIf="afficherTableau">
 <thead>
     <tr>
       <th>Id</th>
@@ -8,9 +14,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of titres">
+    <tr *ngFor="let item of selfies">
       <td>
-          {{item}}
+        {{ item.titre }}
+          <!-- {{item}} afficher le titre de l'objet Selfie -->
+          <button (click)="deleteOneItem(item)">[ - ]</button>
       </td>
     </tr>
   </tbody>
