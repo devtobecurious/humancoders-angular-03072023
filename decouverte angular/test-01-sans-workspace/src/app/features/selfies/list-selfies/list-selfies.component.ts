@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { Selfie, SelfieC, SelfieType } from '../models';
 
 @Component({
@@ -7,6 +7,10 @@ import { Selfie, SelfieC, SelfieType } from '../models';
   styleUrls: ['./list-selfies.component.css']
 })
 export class ListSelfiesComponent {
+  @ViewChild("btnAdd", { static: true }) btnAdd !: ElementRef<HTMLButtonElement>;
+
+  // @ViewChild("noRow", { static: true }) noRow !: TemplateRef<string>;
+
   //private wookie!: Wookiee;
   //titres = ['Selfie 1', 'Selfie 2', 'Selfie 3'];
   selfies: Selfie[] = [
@@ -25,7 +29,7 @@ export class ListSelfiesComponent {
   addSelfie(): void {
     this.selfies.push({
       id: this.selfies.length + 1,
-      titre: `Selfie ${this.selfies.length + 1}}`,
+      titre: `Selfie ${this.selfies.length + 1}`,
       imageUrl: 'https://picsum.photos/200/300',
       wookiee: {
         prenom: 'Chewbacca'
@@ -35,7 +39,7 @@ export class ListSelfiesComponent {
   }
 
   deleteOneItem(selfie: Selfie): void {
-    this.selfies = this.selfies.filter(s => s.id !== selfie.id);
+    this.selfies = this.selfies.filter(s => s.id != selfie.id);
   }
 
   get afficherTableau(): boolean {

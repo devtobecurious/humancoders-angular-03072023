@@ -1,0 +1,13 @@
+
+{{ maFonction() }}
+
+<div *ngFor="let item of wookiees$ | async as wookiees">
+  {{ item.name }} <button (click)="editItem(item)">[ edit ]</button>
+</div>
+
+<app-save-wookiee *ngIf="tamponWookie"
+    titre="Sauvegarde"
+    [wookiee]="tamponWookie"
+    (save)="saveWookiee($event)"
+    (cancel)="cancelSaving()"
+></app-save-wookiee>

@@ -1,10 +1,18 @@
-<button (click)="addSelfie()">Ajouter un selfie</button>
+<button #btnAdd (click)="addSelfie()">Ajouter un selfie</button>
 
 <hr>
 <span (click)="addSelfie()">Ajouter un selfie</span>
 <hr>
 
-<table *ngIf="afficherTableau">
+<ng-template #noRow>
+  <i>Aucun selfie de disponible</i>
+</ng-template>
+
+<div *ngIf="true">
+  Une information clef
+</div>
+
+<table *ngIf="afficherTableau; else noRow">
 <thead>
     <tr>
       <th>Id</th>
