@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { SelfiesModule } from './features/selfies/selfies.module';
 import { WookieesModule } from './features/wookiees/wookiees.module';
+import { PromiseVsObservableComponent } from './learnings/promise-vs-observable/promise-vs-observable.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WookieesModule } from './features/wookiees/wookiees.module';
     HttpClientModule,
     AppRoutingModule,
     SelfiesModule,
-    WookieesModule
+    WookieesModule,
+    PromiseVsObservableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
